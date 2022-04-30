@@ -12,10 +12,6 @@
   },
   "author": "Adryel Simon, Vinicius, Felipe Matheus, Bruna, Caroline",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alchemist-developer/laVie/issues"
-  },
-  "homepage": "https://github.com/alchemist-developer/LaVie#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
