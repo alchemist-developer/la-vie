@@ -3,20 +3,20 @@
 Chegou o momento de colocar em prática tudo que aprendeu sobre Back-end, bora?
 
 ```
-Umgrupodepsicólogossejuntaramecriarama
+Um grupo depsicólogos se juntaram e criaram a
 clínica La Vie - Saúde Mental que oferece
 diversos tipos de terapia.
 ```
-Paraajudarnosatendimentos,elesprecisamdeumaAPIquepermitacriarregistrosde
-psicólogos,pacienteseprontuários.EmumaconversacomosFront-endeosPOforam
+Para ajudar nos atendimentos, eles precisam de uma API que permita criar registros de
+psicólogos, pacienteseprontuários. Em uma conversa com os Front-end e os PO foram
 decididos alguns grupos de endpoints que devem ser criados.
 
 # BANCO DE DADOS
 
-Nossaequipetambémficaráresponsávelporcriarobancodedadosqueinclui:Criação
-do DER e do script SQL que gera o banco.
+Nossa equipe também ficará responsável por criar o banco de dados que inclui: 
+Criação do DER e do script SQL que gera o banco.
 
-Deve seranalisado osendpoints parasejamontadodeacordocomanecessidade,
+Deve ser analisado os endpoints para ser montado de acordo com a necessidade,
 observando os dados que constituem a 3 entidades do sistema:
 
 - Pacientes
