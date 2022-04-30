@@ -8,7 +8,7 @@ clínica La Vie - Saúde Mental que oferece
 diversos tipos de terapia.
 ```
 Para ajudar nos atendimentos, eles precisam de uma API que permita criar registros de
-psicólogos, pacienteseprontuários. Em uma conversa com os Front-end e os PO foram
+psicólogos, pacientes e prontuários. Em uma conversa com os Front-end e os PO foram
 decididos alguns grupos de endpoints que devem ser criados.
 
 # BANCO DE DADOS
