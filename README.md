@@ -3,7 +3,7 @@
 Chegou o momento de colocar em prática tudo que aprendeu sobre Back-end, bora?
 
 ```
-Um grupo depsicólogos se juntaram e criaram a
+Um grupo de psicólogos se juntaram e criaram a
 clínica La Vie - Saúde Mental que oferece
 diversos tipos de terapia.
 ```
