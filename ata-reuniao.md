@@ -3,7 +3,7 @@
 
 ### Reunião de 01/05/2022
 
-- 01/05/2022 - Criação do banco de dados (Bruna, Felipe e Vinicius), comitado e testado por Bruna e Felipe.
+- Criação do banco de dados (Bruna, Felipe e Vinicius), comitado e testado por Bruna e Felipe.
 
 
 ### Reunião de 30/04/2022
