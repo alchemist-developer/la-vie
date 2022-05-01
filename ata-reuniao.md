@@ -1,5 +1,11 @@
 # Grupo 4 - Hands On 3 - La Vie Saúde Mental
 
+
+### Reunião de 01/05/2022
+
+- Criação do banco de dados (Bruna, Felipe e Vinicius), comitado e testado por Bruna e Felipe.
+
+
 ### Reunião de 30/04/2022
 
 - Ficou combinado que ***deveremos commitar os progressos que realizarmos no projeto, porém, antes, avisar no grupo para evitar conflitos***
@@ -9,5 +15,3 @@
 - Por enquanto já ficou estabelecido que **Karu e Bruna criarão o banco de dados e o Simon criará o login**
 
 - Ficou ajustado que a karu fará o fork e enviará o desafio. 
-
-- 01/05/2022 - Criação do banco de dados (Bruna, Felipe e Vinicius), comitado e testado por Bruna e Felipe.
