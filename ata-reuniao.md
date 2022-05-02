@@ -3,6 +3,9 @@
 
 ### Reunião de 01/05/2022
 
+- Criação de controllers/middleware/model (pacientes/psicologos/autenticação); { só fazer ajustes } ~ Simon
+- Rotas atualizadas com controllers ~ Simon
+
 - Criação do banco de dados (Bruna, Felipe e Vinicius), comitado e testado por Bruna e Felipe.
 
 

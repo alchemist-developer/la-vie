@@ -1,7 +1,7 @@
-const express = require('express'); // importando express
-const routes = require('./routes'); // ativando recurso de rotas (./router/index.js), sendo que o index.js e chamado automativamente
-
-const db = require('./database');
+const express = require('express'); 
+const routes = require('./src/routes'); 
+const cors = require ('cors');
+const db = require('./src/database');
 
 const app = express();
 
