@@ -5,6 +5,7 @@
 
 - Criação de controllers/middleware/model (pacientes/psicologos/autenticação); { servidor rodando bonito, só realizar testes } ~ Simon
 - Rotas atualizadas com controllers ~ Simon
+- Login e autenticação em 90%. ~ Simon 
 
 - Criação do banco de dados (Bruna, Felipe e Vinicius), comitado e testado por Bruna e Felipe.
 
