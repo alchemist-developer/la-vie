@@ -1,1 +1,0 @@
-//pendente criar as funcoes 

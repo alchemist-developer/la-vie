@@ -4,11 +4,13 @@
   "description": "La Vie - API",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alchemist-developer/laVie.git"
+    "url": "git+https://github.com/alchemist-developer/la-Vie.git"
   },
   "author": "Adryel Simon, Vinicius, Felipe Matheus, Bruna, Caroline",
   "license": "ISC",

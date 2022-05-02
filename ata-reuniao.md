@@ -8,6 +8,12 @@
 
 - Criação do banco de dados (Bruna, Felipe e Vinicius), comitado e testado por Bruna e Felipe.
 
+- Login e autenticação em 90%. ~ Simon 
+
+- Criação do banco de dados (Bruna, Felipe e Vinicius), comitado e testado por Bruna e Felipe.
+
+- Pendencia: CRUD Atendimentos+Rotas de atendimentos com controllers.
+
 
 ### Reunião de 30/04/2022
 
