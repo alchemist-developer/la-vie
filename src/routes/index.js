@@ -23,9 +23,9 @@ routes.post("/pacientes", pacientesValidation, pacientesController.cadastrarPaci
 routes.delete("/pacientes/:id", pacientesController.deletarPaciente)
 routes.put("/pacientes/:id", pacientesController.atualizarPaciente)
 
-routes.get("/atendimentos", atendimentoController);
-routes.get("/atendimentos/:id", atendimentoController);
-routes.post("/atendimentos", atendimentoController);
+//routes.get("/atendimentos", atendimentoController);
+//routes.get("/atendimentos/:id", atendimentoController);
+//routes.post("/atendimentos", atendimentoController);
 
 routes.post("/login", loginValidation, authController.login);
 
