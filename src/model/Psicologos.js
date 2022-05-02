@@ -8,23 +8,23 @@ const Psicologos = db.define(
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-      field: "ID",
+      field: "id_psicologos",
     },
     nome: {
       type: DataTypes.STRING,
-      field: "NOME",
+      field: "nome_psicologo",
     },
     email: {
       type: DataTypes.STRING,
-      field: "EMAIL",
+      field: "email",
     },
     senha: {
       type: DataTypes.STRING,
-      field: "SENHA",
+      field: "senha_psicologo",
     },
     apresentacao: {
-      type: DataTypes.STRING,
-      field: "APRESENTACAO",
+     type: DataTypes.STRING,
+      field: "apresentacao",
     },
   },
   {
