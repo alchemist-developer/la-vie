@@ -23,7 +23,7 @@ const Psicologos = db.define(
       field: "senha_psicologo",
     },
     apresentacao: {
-     type: DataTypes.STRING,
+      type: DataTypes.STRING,
       field: "apresentacao",
     },
   },

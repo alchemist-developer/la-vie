@@ -8,20 +8,27 @@ const psicologosValidation = require("../validators/psicologos/psicologosValidat
 const pacientesValidation = require("../validators/pacientes/pacientesValidation");
 const autentication = require("../middleware/autentication");
 
-
 const routes = express.Router(); // ativando recurso de rotas (./router/index.js), sendo que o index.js e chamado automativamente
 
-routes.get("/psicologos", psicologosController.listarPsicologos)
-routes.get("/psicologos/:id", psicologosController.listarPsicologoId)
-routes.post("/psicologos", psicologosValidation, psicologosController.cadastrarPsicologo)
-routes.delete("/psicologos/:id", psicologosController.deletarPsicologo)
-routes.put("/psicologos/:id", psicologosController.atualizarPsicologo)
+routes.get("/psicologos", psicologosController.listarPsicologos);
+routes.get("/psicologos/:id", psicologosController.listarPsicologoId);
+routes.post(
+  "/psicologos",
+  psicologosValidation,
+  psicologosController.cadastrarPsicologo
+);
+routes.delete("/psicologos/:id", psicologosController.deletarPsicologo);
+routes.put("/psicologos/:id", psicologosController.atualizarPsicologo);
 
-routes.get("/pacientes", pacientesController.listarPacientes)
-routes.get("/pacientes/:id", pacientesController.listarPacienteId)
-routes.post("/pacientes", pacientesValidation, pacientesController.cadastrarPaciente)
-routes.delete("/pacientes/:id", pacientesController.deletarPaciente)
-routes.put("/pacientes/:id", pacientesController.atualizarPaciente)
+routes.get("/pacientes", pacientesController.listarPacientes);
+routes.get("/pacientes/:id", pacientesController.listarPacienteId);
+routes.post(
+  "/pacientes",
+  pacientesValidation,
+  pacientesController.cadastrarPaciente
+);
+routes.delete("/pacientes/:id", pacientesController.deletarPaciente);
+routes.put("/pacientes/:id", pacientesController.atualizarPaciente);
 
 routes.get("/atendimentos", atendimentosController.listarAtendimentos);
 routes.get("/atendimentos/:id", atendimentosController.listarAtendimentosId);
