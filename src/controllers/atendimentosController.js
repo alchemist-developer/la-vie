@@ -33,7 +33,7 @@ const AtendimentosController = {
         data,
         paciente,
         psicologo,
-        observacao
+        observacao,
       });
       return res.status(201).json(novoAtendimento);
     } catch (error) {

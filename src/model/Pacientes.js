@@ -8,24 +8,24 @@ const Pacientes = db.define(
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-      field: "id_paciente"
+      field: "id_paciente",
     },
     nome: {
       type: DataTypes.STRING,
-      field: "nome_paciente"
+      field: "nome_paciente",
     },
     email: {
       type: DataTypes.STRING,
-      field: "email"
+      field: "email",
     },
     idade: {
       type: DataTypes.STRING,
-      field: "idade"
+      field: "idade",
     },
   },
   {
     tableName: "paciente",
-    timestamps: false
+    timestamps: false,
   }
 );
 module.exports = Pacientes;

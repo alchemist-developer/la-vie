@@ -15,7 +15,7 @@ const PacientesController = {
     try {
       const pacienteID = await Pacientes.findByPk(id);
       if (!pacienteID) {
-        return res.status(404).json("Não existe paciente com o id " + id);
+        return res.status(404).json("Não existe paciente com o ID: " + id);
       }
       res.status(200).json(pacienteID);
     } catch (error) {
@@ -36,12 +36,10 @@ const PacientesController = {
     try {
       const pacienteId = await Pacientes.destroy({
         where: {
-          id
+          id,
         },
       });
-      res
-        .status(204)
-        .json("Deletado com sucesso " + id);
+      res.status(204).json("Deletado com sucesso " + id);
 
       if (!pacienteId) {
         return res.status(404).json("Não existe paciente com o id " + id);
@@ -60,7 +58,7 @@ const PacientesController = {
         { nome, email, idade },
         {
           where: {
-            id
+            id,
           },
         }
       );
