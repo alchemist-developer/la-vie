@@ -13,4 +13,4 @@ app.use(cors());
 app.use(routes); // use as rotas externas criadas
 app.use(handleError);
 
-app.listen(PORT, () => console.log(`Servidor rodando na porta+ ${PORT}`)); // cria o servidor na porta 3000
+app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`)); // cria o servidor na porta 3000
