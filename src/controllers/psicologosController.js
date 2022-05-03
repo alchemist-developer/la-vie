@@ -47,7 +47,7 @@ const PsicologosController = {
           id,
         },
       });
-      res.status(204).send("");
+      res.status(204).send("Sucesso!");
 
       if (!psicologoId) {
         return res.status(404).json("Não existe psicologo com o id " + id);
