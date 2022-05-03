@@ -14,14 +14,18 @@ const Atendimentos = db.define(
       type: DataTypes.DATE,
       field: "data_atendimento",
     },
-    //paciente_psicologos: {
-     // type: DataTypes.STRING,
-     // field: "paciente_psicologos",
-    //},
-    //psicologo_pacientes: {
-    //  type: DataTypes.STRING,
-     // field: "psicologo_pacientes",
-    //},
+    paciente_psicologos: {
+     type: DataTypes.STRING,
+     field: "paciente_psicologos",
+    },
+    psicologos_paciente: {
+     type: DataTypes.STRING,
+     field: "psicologos_paciente",
+    },
+    observacao:{
+      type: DataTypes.STRING(1000),
+      field: "observacao",
+    }
   },
   {
     tableName: "atendimentos",
