@@ -20,15 +20,28 @@ routes.post(
 routes.delete("/psicologos/:id", psicologosController.deletarPsicologo);
 routes.put("/psicologos/:id", psicologosController.atualizarPsicologo);
 
-routes.get("/pacientes", pacientesController.listarPacientes);
-routes.get("/pacientes/:id", pacientesController.listarPacienteId);
+routes.get("/pacientes", autentication, pacientesController.listarPacientes);
+routes.get(
+  "/pacientes/:id",
+  autentication,
+  pacientesController.listarPacienteId
+);
 routes.post(
   "/pacientes",
+  autentication,
   pacientesValidation,
   pacientesController.cadastrarPaciente
 );
-routes.delete("/pacientes/:id", pacientesController.deletarPaciente);
-routes.put("/pacientes/:id", pacientesController.atualizarPaciente);
+routes.delete(
+  "/pacientes/:id",
+  autentication,
+  pacientesController.deletarPaciente
+);
+routes.put(
+  "/pacientes/:id",
+  autentication,
+  pacientesController.atualizarPaciente
+);
 
 routes.get("/atendimentos", atendimentosController.listarAtendimentos);
 routes.get("/atendimentos/:id", atendimentosController.listarAtendimentosId);
