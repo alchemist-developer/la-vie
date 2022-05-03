@@ -24,8 +24,8 @@ const PacientesController = {
   },
   async cadastrarPaciente(req, res) {
     try {
-      const { nome, email, idade } = req.body;
-      const novoPaciente = await Pacientes.create({ nome, email, idade });
+      const { nome_paciente, email, idade } = req.body;
+      const novoPaciente = await Pacientes.create({ nome_paciente, email, idade });
       return res.status(201).json("Sucesso " + novoPaciente);
     } catch (error) {
       res.status(400).json("Não foi possivel cadastrar o paciente");
@@ -53,9 +53,9 @@ const PacientesController = {
   async atualizarPaciente(req, res) {
     const { id } = req.params;
     try {
-      const { nome, email, idade } = req.body;
+      const { nome_paciente, email, idade } = req.body;
       const atualizarPaciente = await Pacientes.update(
-        { nome, email, idade },
+        { nome_paciente, email, idade },
         {
           where: {
             id,

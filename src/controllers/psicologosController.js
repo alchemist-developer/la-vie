@@ -25,11 +25,11 @@ const PsicologosController = {
   },
   async cadastrarPsicologo(req, res) {
     try {
-      const { nome, senha, email, apresentacao } = req.body;
+      const { nome_psicologo, senha_psicologo, email, apresentacao } = req.body;
       const novaSenha = bcrypt.hashSync(senha, 10);
       const novoPsicologo = await Psicologos.create({
-        nome,
-        senha: novaSenha,
+        nome_psicologo,
+        senha_psicologo: novaSenha,
         email,
         apresentacao,
       });
@@ -60,12 +60,12 @@ const PsicologosController = {
   async atualizarPsicologo(req, res) {
     const { id } = req.params;
     try {
-      const { nome, senha, email, apresentacao } = req.body;
+      const { nome_psicologo, senha_psicologo, email, apresentacao } = req.body;
 
-      if (senha) {
+      if (senha_psicologo) {
         const novaSenha = bcrypt.hashSync(senha, 10);
         const atualizarPsicologo = await Psicologos.update(
-          { nome, senha: novaSenha, email, apresentacao },
+          { nome_psicologo, senha_psicologo: novaSenha, email, apresentacao },
           {
             where: {
               id,
@@ -75,7 +75,7 @@ const PsicologosController = {
         return res.status(201).json("Psicologo atualizado");
       } else {
         const atualizarPsicologo = await Psicologos.update(
-          { nome, senha, email, apresentacao },
+          { nome_psicologo, senha_psicologo, email, apresentacao },
           {
             where: {
               id,
