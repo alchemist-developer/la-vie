@@ -11,8 +11,8 @@ const PacientesController = {
     }
   },
   async listarPacienteId(req, res) {
-    const { id } = req.params;
     try {
+      const { id } = req.params;
       const pacienteID = await Pacientes.findByPk(id);
       if (!pacienteID) {
         return res.status(404).json("Não existe paciente com o ID: " + id);
@@ -24,16 +24,16 @@ const PacientesController = {
   },
   async cadastrarPaciente(req, res) {
     try {
-      const { nome_paciente, email, idade } = req.body;
-      const novoPaciente = await Pacientes.create({ nome_paciente, email, idade });
+      const { nome, email, idade } = req.body;
+      const novoPaciente = await Pacientes.create({ nome, email, idade });
       return res.status(201).json("Sucesso " + novoPaciente);
     } catch (error) {
       res.status(400).json("Não foi possivel cadastrar o paciente");
     }
   },
   async deletarPaciente(req, res) {
-    const { id } = req.params;
     try {
+      const { id } = req.params;
       const pacienteId = await Pacientes.destroy({
         where: {
           id,
@@ -52,9 +52,9 @@ const PacientesController = {
   async atualizarPaciente(req, res) {
     const { id } = req.params;
     try {
-      const { nome_paciente, email, idade } = req.body;
+      const { nome, email, idade } = req.body;
       const atualizarPaciente = await Pacientes.update(
-        { nome_paciente, email, idade },
+        { nome, email, idade },
         {
           where: {
             id,

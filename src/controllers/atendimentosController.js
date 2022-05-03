@@ -20,8 +20,8 @@ const AtendimentosController = {
     }
   },
   async listarAtendimentosId(req, res) {
-    const { id } = req.params;
     try {
+      const { id } = req.params;
       const atendimentoID = await Atendimentos.findByPk(id);
       if (!atendimentoID) {
         return res.status(404).json("Não existe atendimento com o id " + id);
@@ -38,13 +38,14 @@ const AtendimentosController = {
   async cadastrarAtendimento(req, res) {
     const token = req.auth.id;
     try {
-      const { data_atendimento, paciente_psicologos, psicologos_paciente,observacao } = req.body;
+      const { data, paciente, psicologos, observacao } = req.body;
       const novoAtendimento = await Atendimentos.create({
-        data_atendimento,
-        paciente_psicologos,
-        psicologos_paciente,
+        data,
+        paciente,
+        psicologos,
         observacao,
-      }); return res.status(201).json(novoAtendimento);
+      });
+      return res.status(201).json(novoAtendimento);
     } catch (error) {
       res.status(400).json("Não foi possivel cadastrar o atendimento");
     }

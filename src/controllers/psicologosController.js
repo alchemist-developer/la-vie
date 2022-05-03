@@ -12,8 +12,8 @@ const PsicologosController = {
     }
   },
   async listarPsicologoId(req, res) {
-    const { id } = req.params;
     try {
+      const { id } = req.params;
       const psicologoId = await Psicologos.findByPk(id);
       if (!psicologoId) {
         return res.status(404).json("Não existe psicologo com o id " + id);
@@ -25,11 +25,11 @@ const PsicologosController = {
   },
   async cadastrarPsicologo(req, res) {
     try {
-      const { nome_psicologo, senha_psicologo, email, apresentacao } = req.body;
+      const { nome, senha, email, apresentacao } = req.body;
       const novaSenha = bcrypt.hashSync(senha, 10);
       const novoPsicologo = await Psicologos.create({
-        nome_psicologo,
-        senha_psicologo: novaSenha,
+        nome,
+        senha: novaSenha,
         email,
         apresentacao,
       });
@@ -40,8 +40,9 @@ const PsicologosController = {
     }
   },
   async deletarPsicologo(req, res) {
-    const { id } = req.params;
+    
     try {
+      const { id } = req.params;
       const psicologoId = await Psicologos.destroy({
         where: {
           id,
@@ -57,14 +58,15 @@ const PsicologosController = {
   },
 
   async atualizarPsicologo(req, res) {
-    const { id } = req.params;
+    
     try {
-      const { nome_psicologo, senha_psicologo, email, apresentacao } = req.body;
+      const { id } = req.params;
+      const { nome, senha, email, apresentacao } = req.body;
 
-      if (senha_psicologo) {
+      if (senha) {
         const novaSenha = bcrypt.hashSync(senha, 10);
         const atualizarPsicologo = await Psicologos.update(
-          { nome_psicologo, senha_psicologo: novaSenha, email, apresentacao },
+          { nome, senha: novaSenha, email, apresentacao },
           {
             where: {
               id,
@@ -74,7 +76,7 @@ const PsicologosController = {
         return res.status(201).json("Psicologo atualizado");
       } else {
         const atualizarPsicologo = await Psicologos.update(
-          { nome_psicologo, senha_psicologo, email, apresentacao },
+          { nome, senha, email, apresentacao },
           {
             where: {
               id,
