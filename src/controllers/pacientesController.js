@@ -14,10 +14,10 @@ const PacientesController = {
     try {
       const { id } = req.params;
       const pacienteID = await Pacientes.findByPk(id);
-      if (!pacienteID) {
-        return res.status(404).json("Não existe paciente com o ID: " + id);
+      if (pacienteID) {
+        res.status(200).json("Sucesso " + pacienteID);
       }
-      res.status(200).json("Sucesso " + pacienteID);
+      return res.status(404).json("Não existe paciente com o ID: " + id);
     } catch (error) {
       res.status(500).json("Não foi possivel listar o paciente pelo ID");
     }

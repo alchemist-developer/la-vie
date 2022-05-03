@@ -4,7 +4,7 @@ const { DataTypes } = require("sequelize");
 const Psicologos = db.define(
   "Psicologos",
   {
-    id_psicologos: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
