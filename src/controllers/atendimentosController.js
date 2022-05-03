@@ -44,8 +44,7 @@ const AtendimentosController = {
         paciente_psicologos,
         psicologos_paciente,
         observacao,
-      });
-      return res.status(201).json(novoAtendimento);
+      }); return res.status(201).json(novoAtendimento);
     } catch (error) {
       res.status(400).json("Não foi possivel cadastrar o atendimento");
     }
