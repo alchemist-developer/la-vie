@@ -4,13 +4,13 @@ const { DataTypes } = require("sequelize");
 const Psicologos = db.define(
   "Psicologos",
   {
-    id: {
+    id_psicologos: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       field: "id_psicologos",
     },
-    nome: {
+    nome_psicologo: {
       type: DataTypes.STRING,
       field: "nome_psicologo",
     },
@@ -18,7 +18,7 @@ const Psicologos = db.define(
       type: DataTypes.STRING,
       field: "email",
     },
-    senha: {
+    senha_psicologo: {
       type: DataTypes.STRING,
       field: "senha_psicologo",
     },

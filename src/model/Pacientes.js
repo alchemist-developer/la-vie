@@ -4,13 +4,13 @@ const { DataTypes } = require("sequelize");
 const Pacientes = db.define(
   "Pacientes",
   {
-    id: {
+    id_paciente: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       field: "id_paciente",
     },
-    nome: {
+    nome_paciente: {
       type: DataTypes.STRING,
       field: "nome_paciente",
     },

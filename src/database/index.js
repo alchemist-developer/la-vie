@@ -2,7 +2,7 @@ const sequelize = require("sequelize");
 const PORTDB = 3306;
 const HOSTDB = "localhost";
 /* COLOQUE A SENHA DO SEU BANCO */
-const sua_senha = "root";
+const sua_senha = "";
 
 const DB_NAME = "la-vie";
 const DB_USER = "root";

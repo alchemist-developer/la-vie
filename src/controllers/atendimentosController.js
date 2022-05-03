@@ -1,9 +1,18 @@
-const Atendimentos = require("../model/Atendimentos");
+const {
+  Atendimentos,
+  Pacientes,
+  Psicologos,
+} = require("../model/Atendimentos");
 
 const AtendimentosController = {
   async listarAtendimentos(req, res) {
     try {
-      const listaDeAtendimentos = await Atendimentos.findAll();
+      const listaDeAtendimentos = await Atendimentos.findAll({
+        include: [Pacientes, Psicologos],
+        attributes: {
+          exclude: ["senha"],
+        },
+      });
       res.status(200).json(listaDeAtendimentos);
     } catch (error) {
       res.json("Não foi possível listar os atendimentos");
@@ -27,12 +36,12 @@ const AtendimentosController = {
     }
   },
   async cadastrarAtendimento(req, res) {
+    const token = req.auth.id;
     try {
-      const { data, paciente, psicologo, observacao } = req.body;
-      const novoAtendimento = await Atendimento.create({
-        data,
-        paciente,
-        psicologo,
+      const { data_atendimento, paciente_psicologos, observacao } = req.body;
+      const novoAtendimento = await Atendimentos.create({
+        data_atendimento,
+        paciente_psicologos,
         observacao,
       });
       return res.status(201).json(novoAtendimento);

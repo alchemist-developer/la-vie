@@ -1,7 +1,7 @@
 //criar relacionamento de paciente e psicologos
 const Pacientes = require("../validators/pacientes");
 const Psicologos = require("../validators/psicologos");
-const Atendimentos = require("../validators/auth");
+const Atendimentos = require("../validators/atendimentos");
 
 Pacientes.belongsToMany(Psicologos, {
   foreignKey: "id_paciente",

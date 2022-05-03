@@ -17,7 +17,7 @@ const authController = {
       return res.status(400).json("Usuário não Encontrado");
     }
 
-    if (!bcrypt.compareSync(senha, psicologo.senha)) {
+    if (!bcrypt.compareSync(senha, psicologo.senha_psicologo)) {
       return res
         .status(401)
         .json("E-mail ou senha inválida, verifique e tente novamente");
@@ -25,9 +25,9 @@ const authController = {
 
     const token = jwt.sign(
       {
-        id: psicologo.id,
+        id: psicologo.id_psicologos,
         email: psicologo.email,
-        nome: psicologo.nome,
+        nome: psicologo.nome_psicologo,
       },
       secret.key
     );
