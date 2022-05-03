@@ -1,8 +1,11 @@
 const sequelize = require("sequelize");
 
+/* COLOQUE A SENHA DO SEU BANCO */
+const sua_senha = ''
+
 const DB_NAME = "la-vie";
 const DB_USER = "root";
-const DB_PASS = "290595@ABc";
+const DB_PASS = sua_senha;
 const DB_CONFIG = {
   dialect: "mysql",
   host: "localhost",
