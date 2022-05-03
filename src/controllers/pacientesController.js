@@ -6,7 +6,7 @@ const PacientesController = {
       const listaDePacientes = await Pacientes.findAll();
       res.status(200).json(listaDePacientes);
     } catch (error) {
-      res.json("Não foi possível lista os pacientes");
+      res.json("Não foi possível listar os pacientes");
       console.error(error);
     }
   },
@@ -17,7 +17,7 @@ const PacientesController = {
       if (!pacienteID) {
         return res.status(404).json("Não existe paciente com o ID: " + id);
       }
-      res.status(200).json(pacienteID);
+      res.status(200).json('Sucesso ' + pacienteID);
     } catch (error) {
       res.status(500).json("Não foi possivel listar o paciente pelo ID");
     }
@@ -26,7 +26,7 @@ const PacientesController = {
     try {
       const { nome, email, idade } = req.body;
       const novoPaciente = await Pacientes.create({ nome, email, idade });
-      return res.status(201).json(novoPaciente);
+      return res.status(201).json('Sucesso '+novoPaciente);
     } catch (error) {
       res.status(400).json("Não foi possivel cadastrar o paciente");
     }
