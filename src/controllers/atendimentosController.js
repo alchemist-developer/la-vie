@@ -6,7 +6,7 @@ const AtendimentosController = {
       const listaDeAtendimentos = await Atendimentos.findAll();
       res.status(200).json(listaDeAtendimentos);
     } catch (error) {
-      res.json("Não foi possível lista os atendimentos");
+      res.json("Não foi possível listar os atendimentos");
       console.error(error);
     }
   },
