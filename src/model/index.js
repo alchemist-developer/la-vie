@@ -21,8 +21,6 @@ Atendimentos.hasMany(Pacientes, {
   foreignKey: "id_paciente",
 });
 
-
-
 module.exports = {
   Pacientes,
   Psicologos,
