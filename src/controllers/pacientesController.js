@@ -39,7 +39,7 @@ const PacientesController = {
           id,
         },
       });
-      res.status(204).json("");
+      res.status(204).json({ message: "Identificador deletado com sucesso" + id });
 
       if (!pacienteId) {
         return res.status(404).json("Não existe paciente com o id " + id);

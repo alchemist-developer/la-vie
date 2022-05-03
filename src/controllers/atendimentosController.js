@@ -32,3 +32,5 @@ const AtendimentosController = {
     }
   },
 }
+
+module.exports = AtendimentosController;

@@ -1,7 +1,7 @@
 const express = require("express");
 const pacientesController = require("../controllers/pacientesController");
 const psicologosController = require("../controllers/psicologosController");
-const atendimentoController = require("../controllers/atendimentosController");
+const atendimentosController = require("../controllers/atendimentosController");
 const authController = require("../controllers/authController");
 const loginValidation = require("../validators/auth/authLogin");
 const psicologosValidation = require("../validators/psicologos/psicologosValidation");
@@ -23,9 +23,9 @@ routes.post("/pacientes", pacientesValidation, pacientesController.cadastrarPaci
 routes.delete("/pacientes/:id", pacientesController.deletarPaciente)
 routes.put("/pacientes/:id", pacientesController.atualizarPaciente)
 
-routes.get("/atendimentos", atendimentosController);
-routes.get("/atendimentos/:id", atendimentosController);
-routes.post("/atendimentos", atendimentosController);
+routes.get("/atendimentos", atendimentosController.listarAtendimentos);
+routes.get("/atendimentos/:id", atendimentosController.listarAtendimentosId);
+routes.post("/atendimentos", atendimentosController.cadastrarAtendimento);
 
 routes.post("/login", loginValidation, authController.login);
 
