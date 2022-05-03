@@ -1,15 +1,16 @@
 const sequelize = require("sequelize");
-
+const PORTDB = 3306
+const HOSTDB = 'localhost'
 /* COLOQUE A SENHA DO SEU BANCO */
-const sua_senha = ''
+const sua_senha = 'root'
 
 const DB_NAME = "la-vie";
 const DB_USER = "root";
 const DB_PASS = sua_senha;
 const DB_CONFIG = {
   dialect: "mysql",
-  host: "localhost",
-  port: 3306,
+  host: HOSTDB,
+  port: PORTDB
 };
 
 //objeto para guardar a conexao do banco de dados
@@ -32,7 +33,7 @@ async function hasConection() {
 }
 
 Object.assign(db, {
-  hasConection,
+  hasConection
 });
 
 module.exports = db;

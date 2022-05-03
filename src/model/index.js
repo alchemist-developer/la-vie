@@ -5,24 +5,24 @@ const Atendimentos = require("../validators/auth");
 
 Pacientes.belongsToMany(Psicologos, {
   foreignKey: "id_paciente",
-  through: Atendimentos,
+  through: Atendimentos
 });
 
 Psicologos.belongsToMany(Pacientes, {
   foreignKey: "id_psicologos",
-  through: Atendimentos,
+  through: Atendimentos
 });
 
 Atendimentos.hasMany(Psicologos, {
-  foreignKey: "id_psicologos",
+  foreignKey: "id_psicologos"
 });
 
 Atendimentos.hasMany(Pacientes, {
-  foreignKey: "id_paciente",
+  foreignKey: "id_paciente"
 });
 
 module.exports = {
   Pacientes,
   Psicologos,
-  Atendimentos,
+  Atendimentos
 };

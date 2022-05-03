@@ -9,7 +9,7 @@ const authController = {
 
     const psicologo = await psicologos.findOne({
       where: {
-        email: email,
+        email: email
       },
     });
 
@@ -27,7 +27,7 @@ const authController = {
       {
         id: psicologo.id,
         email: psicologo.email,
-        nome: psicologo.nome,
+        nome: psicologo.nome
       },
       secret.key
     );

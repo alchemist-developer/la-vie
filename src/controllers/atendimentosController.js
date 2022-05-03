@@ -19,18 +19,27 @@ const AtendimentosController = {
       }
       res.status(200).json(atendimentoID);
     } catch (error) {
-      res.status(500).json("Não foi possivel listar o atendimento pelo ID. Confirme o número do Id do atendimento e tente novamente");
+      res
+        .status(500)
+        .json(
+          "Não foi possivel listar o atendimento pelo ID. Confirme o número do Id do atendimento e tente novamente"
+        );
     }
   },
   async cadastrarAtendimento(req, res) {
     try {
       const { data, paciente, psicologo, observacao } = req.body;
-      const novoAtendimento = await Atendimento.create({ data, paciente, psicologo, observacao });
+      const novoAtendimento = await Atendimento.create({
+        data,
+        paciente,
+        psicologo,
+        observacao
+      });
       return res.status(201).json(novoAtendimento);
     } catch (error) {
       res.status(400).json("Não foi possivel cadastrar o atendimento");
     }
   },
-}
+};
 
 module.exports = AtendimentosController;

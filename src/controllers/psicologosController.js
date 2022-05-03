@@ -31,7 +31,7 @@ const PsicologosController = {
         nome,
         senha: novaSenha,
         email,
-        apresentacao,
+        apresentacao
       });
       return res.status(201).json(novoPsicologo);
     } catch (error) {
@@ -44,7 +44,7 @@ const PsicologosController = {
     try {
       const psicologoId = await Psicologos.destroy({
         where: {
-          id,
+          id
         },
       });
       res.status(204).send("Sucesso!");
@@ -68,7 +68,7 @@ const PsicologosController = {
           { nome, senha: novaSenha, email, apresentacao },
           {
             where: {
-              id,
+              id
             },
           }
         );
@@ -78,7 +78,7 @@ const PsicologosController = {
           { nome, senha, email, apresentacao },
           {
             where: {
-              id,
+              id
             },
           }
         );

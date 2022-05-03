@@ -36,12 +36,12 @@ const PacientesController = {
     try {
       const pacienteId = await Pacientes.destroy({
         where: {
-          id,
+          id
         },
       });
       res
         .status(204)
-        .json("Identificador deletado com sucesso " + id);
+        .json("Deletado com sucesso " + id);
 
       if (!pacienteId) {
         return res.status(404).json("Não existe paciente com o id " + id);
@@ -60,7 +60,7 @@ const PacientesController = {
         { nome, email, idade },
         {
           where: {
-            id,
+            id
           },
         }
       );
