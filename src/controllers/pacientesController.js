@@ -1,4 +1,4 @@
-const Pacientes = require("../model/Pacientes");
+const { Pacientes } = require("../model");
 
 const PacientesController = {
   async listarPacientes(req, res) {
@@ -6,18 +6,18 @@ const PacientesController = {
       const listaDePacientes = await Pacientes.findAll();
       res.status(200).json(listaDePacientes);
     } catch (error) {
-      res.json("Não foi possível listar os pacientes");
+      res.json("Não foi possível listar dos pacientes");
       console.error(error);
     }
   },
   async listarPacienteId(req, res) {
+    const { id } = req.params;
     try {
-      const { id } = req.params;
       const pacienteID = await Pacientes.findByPk(id);
-      if (pacienteID) {
-        res.status(200).json("Sucesso " + pacienteID);
+      if (!pacienteID) {
+        return res.status(404).json("Não existe paciente com o id " + id);
       }
-      return res.status(404).json("Não existe paciente com o ID: " + id);
+      res.status(200).json(pacienteID);
     } catch (error) {
       res.status(500).json("Não foi possivel listar o paciente pelo ID");
     }
@@ -26,29 +26,29 @@ const PacientesController = {
     try {
       const { nome, email, idade } = req.body;
       const novoPaciente = await Pacientes.create({ nome, email, idade });
-      return res.status(201).json("Sucesso " + novoPaciente);
+      return res.status(201).json(novoPaciente);
     } catch (error) {
       res.status(400).json("Não foi possivel cadastrar o paciente");
     }
   },
   async deletarPaciente(req, res) {
+    const { id } = req.params;
     try {
-      const { id } = req.params;
       const pacienteId = await Pacientes.destroy({
         where: {
           id,
         },
       });
-      if (pacienteId) {
-        res.status(200).json("Deletado com sucesso " + id);
+      res.status(204).json("");
+
+      if (!pacienteId) {
+        return res.status(404).json("Não existe paciente com o id " + id);
       }
-      return res.status(404).json("Não existe paciente com o id " + id);
     } catch (error) {
       res.status(400).json("Não foi possivel deletar o paciente");
     }
   },
 
-  /* inutilizado */
   async atualizarPaciente(req, res) {
     const { id } = req.params;
     try {

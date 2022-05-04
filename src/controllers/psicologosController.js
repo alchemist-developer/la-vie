@@ -1,4 +1,4 @@
-const Psicologos = require("../model/Psicologos");
+const { Psicologos } = require("../model");
 const bcrypt = require("bcryptjs");
 
 const PsicologosController = {
@@ -12,8 +12,8 @@ const PsicologosController = {
     }
   },
   async listarPsicologoId(req, res) {
+    const { id } = req.params;
     try {
-      const { id } = req.params;
       const psicologoId = await Psicologos.findByPk(id);
       if (!psicologoId) {
         return res.status(404).json("Não existe psicologo com o id " + id);
@@ -40,27 +40,26 @@ const PsicologosController = {
     }
   },
   async deletarPsicologo(req, res) {
-
+    const { id } = req.params;
     try {
-      const { id } = req.params;
       const psicologoId = await Psicologos.destroy({
         where: {
           id,
         },
       });
-      if (psicologoId) {
-        return res.status(200).send("Sucesso!");
-      } res.status(404).json("Não existe psicologo com o id " + id);
+      res.status(204).send("");
 
+      if (!psicologoId) {
+        return res.status(404).json("Não existe psicologo com o id " + id);
+      }
     } catch (error) {
       res.status(400).json("Não foi possivel deletar o psicologo");
     }
   },
 
   async atualizarPsicologo(req, res) {
-
+    const { id } = req.params;
     try {
-      const { id } = req.params;
       const { nome, senha, email, apresentacao } = req.body;
 
       if (senha) {

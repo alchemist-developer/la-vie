@@ -1,16 +1,17 @@
-const express = require("express");
-const routes = require("./src/routes");
-const cors = require("cors");
-const db = require("./src/database");
-const handleError = require('./src/middleware/handleError');
-const PORT = 3000;
-const app = express();
+const express = require('express')
+const cors = require ('cors')
+const routes = require ('./src/routes')
+const db = require('./src/database')
+const handleError = require ('./src/middlewares/handleError')
+
+const app = express()
+app.use (cors())
 
 db.hasConection();
 
-app.use(express.json()); // importante usar a funcao em json antes da routes(rotas) -- quero utilizar a estrutura de json
-app.use(cors());
-app.use(routes); // use as rotas externas criadas
-app.use(handleError);
+app.use(express.json())
+app.use(routes)
+app.use (handleError)
 
-app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`)); // cria o servidor na porta 3000
+
+app.listen(3000, () => console.log('Server running on porta 3000'))

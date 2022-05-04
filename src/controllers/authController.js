@@ -1,6 +1,6 @@
-const psicologos = require("../model/Psicologos");
-const bcrypt = require("bcryptjs");
+const { psicologos } = require("../model/");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 const secret = require("../config/secret");
 
 const authController = {
@@ -14,13 +14,11 @@ const authController = {
     });
 
     if (!psicologo) {
-      return res.status(400).json("Usuário não Encontrado");
+      return res.status(400).json("Usuário não Cadastrado");
     }
 
     if (!bcrypt.compareSync(senha, psicologo.senha)) {
-      return res
-        .status(401)
-        .json("E-mail ou senha inválida, verifique e tente novamente");
+      return res.status(401).json("Senha Inválida");
     }
 
     const token = jwt.sign(

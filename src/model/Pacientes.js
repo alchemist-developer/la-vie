@@ -9,9 +9,9 @@ const Pacientes = db.define(
       primaryKey: true,
       autoIncrement: true,
     },
-    nome_paciente: {
+    nome: {
       type: DataTypes.STRING,
-      field: "nome_paciente",
+      field: "nome",
     },
     email: {
       type: DataTypes.STRING,

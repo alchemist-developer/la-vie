@@ -9,17 +9,17 @@ const Psicologos = db.define(
       primaryKey: true,
       autoIncrement: true,
     },
-    nome_psicologo: {
+    nome: {
       type: DataTypes.STRING,
-      field: "nome_psicologo",
+      field: "nome",
     },
     email: {
       type: DataTypes.STRING,
       field: "email",
     },
-    senha_psicologo: {
+    senha: {
       type: DataTypes.STRING,
-      field: "senha_psicologo",
+      field: "senha",
     },
     apresentacao: {
       type: DataTypes.STRING,

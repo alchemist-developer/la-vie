@@ -1,50 +1,44 @@
-const {
-  Atendimentos,
-  Pacientes,
-  Psicologos,
-} = require("../model/Atendimentos");
+const { Atendimentos, Pacientes, Psicologos } = require("../model");
 
 const AtendimentosController = {
   async listarAtendimentos(req, res) {
     try {
       const listaDeAtendimentos = await Atendimentos.findAll({
         include: [
-          { model: Pacientes, attributes: ["nome_paciente"] },
-          { model: Psicologos, attributes: ["nome_psicologo"] },
+          { model: Pacientes, attributes: ["nome"] },
+          { model: Psicologos, attributes: ["nome"] },
         ],
         attributes: ["id", "data_atendimento", "observacao"],
       });
+
       res.status(200).json(listaDeAtendimentos);
     } catch (error) {
       res.json("Não foi possível listar os atendimentos");
       console.error(error);
     }
   },
-  async listarAtendimentosId(req, res) {
+  async listarAtendimentoById(req, res) {
     const { id } = req.params;
     try {
-      const atendimentoID = await Atendimentos.findByPk(id);
-      if (!atendimentoID) {
-        return res.status(404).json("Não existe atendimento com o id " + id);
+      const atendimentoBD = await Atendimentos.findByPk(id);
+      if (!atendimentoBD) {
+        return res.status(404).json(`Não existe atendimento com o id ${id}`);
       }
-      res.status(200).json(atendimentoID);
+      res.status(200).json(atendimentoBD);
     } catch (error) {
-      res
-        .status(400)
-        .json(
-          "Não foi possivel listar o atendimento pelo ID. Confirme o número do Id do atendimento e tente novamente"
-        );
+      res.status(400).json("Não foi possivel encontrar o atendimento pelo ID");
     }
   },
   async cadastrarAtendimento(req, res) {
     const token = req.auth.id;
+    console.log(token);
     try {
-      const { paciente_id, data_atendimento, observacao } = req.body;
+      const { paciente_psicologos, data_atendimento, observacao } = req.body;
       const novoAtendimento = await Atendimentos.create({
-        paciente_id,
+        paciente_psicologos,
         data_atendimento,
-        psicologos_paciente: token,
         observacao,
+        psicologos_paciente: token,
       });
       return res.status(201).json(novoAtendimento);
     } catch (error) {

@@ -1,3 +1,3 @@
 module.exports = {
-  key: "0xXxXxX0",
+  key: "mexendoNoMeuCodigo?",
 };

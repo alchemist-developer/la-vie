@@ -1,18 +1,19 @@
-//criar relacionamento de paciente e psicologos
-const Pacientes = require("../validators/pacientes");
-const Psicologos = require("../validators/psicologos");
-const Atendimentos = require("../validators/atendimentos");
+const Psicologos = require('./Psicologos');
+const Pacientes = require('./Pacientes');
+const Atendimentos = require('./Atendimentos');
+ 
+Atendimentos.belongsTo(Pacientes, {
+    foreignKey: "paciente_psicologos"
+})
+
 
 Atendimentos.belongsTo(Psicologos, {
-  foreignKey: "psicologos_paciente",
-});
+    foreignKey: "psicologos_paciente"
+})
 
-Atendimentos.belongsTo(Pacientes, {
-  foreignKey: "paciente_psicologos",
-});
-
+ 
 module.exports = {
-  Pacientes,
-  Psicologos,
-  Atendimentos,
-};
+    Psicologos,
+    Pacientes,
+    Atendimentos
+}
