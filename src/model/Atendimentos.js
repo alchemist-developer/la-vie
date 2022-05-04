@@ -10,19 +10,10 @@ const Atendimentos = db.define(
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-      field: "atendimentos_id",
     },
-    data: {
+    data_atendimento: {
       type: DataTypes.DATE,
       field: "data_atendimento",
-    },
-    paciente_psicologos: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: Pacientes,
-        key: "id_paciente"
-      },
-      field: "paciente_psicologos",
     },
     psicologos_paciente: {
       type: DataTypes.INTEGER,
@@ -31,6 +22,14 @@ const Atendimentos = db.define(
         key: "id_psicologos"
       },
       field: "psicologos_paciente",
+    },
+    paciente_psicologos: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: Pacientes,
+        key: "id_paciente"
+      },
+      field: "paciente_psicologos",
     },
     observacao: {
       type: DataTypes.STRING(1000),

@@ -8,7 +8,6 @@ const Psicologos = db.define(
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-      field: "id_psicologos",
     },
     nome_psicologo: {
       type: DataTypes.STRING,
