@@ -43,7 +43,7 @@ const AtendimentosController = {
       const novoAtendimento = await Atendimentos.create({
         paciente_id,
         data_atendimento,
-        psicologos_paciente,
+        psicologos_paciente: token,
         observacao,
       });
       return res.status(201).json(novoAtendimento);
