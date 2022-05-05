@@ -10,6 +10,7 @@ const Atendimentos = db.define(
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
+            field: "id"
         },
         data_atendimento: {
             type: DataTypes.DATE,
