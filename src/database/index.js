@@ -6,7 +6,7 @@ const sua_senha = "";
 
 const DB_NAME = "la-vie";
 const DB_USER = "root";
-const DB_PASS = sua_senha;
+const DB_PASS = "290595@ABc";
 const DB_CONFIG = {
   dialect: "mysql",
   host: HOSTDB,
