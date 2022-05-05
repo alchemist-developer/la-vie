@@ -10,8 +10,8 @@ const authController = {
 
       const psicologo = await Psicologos.findOne({
         where: {
-          email: email
-        }
+          email: email,
+        },
       });
 
       if (!psicologo) {
@@ -32,9 +32,8 @@ const authController = {
       );
 
       return res.json(token);
-
     } catch (error) {
-      res.status(500).json("Erro interno")
+      res.status(500).json("Erro interno");
     }
   },
 };

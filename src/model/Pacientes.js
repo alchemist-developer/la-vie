@@ -8,7 +8,7 @@ const Pacientes = db.define(
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-      field: "id"
+      field: "id",
     },
     nome: {
       type: DataTypes.STRING,

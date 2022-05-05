@@ -21,18 +21,23 @@ const AtendimentosController = {
     const { id } = req.params;
     try {
       const atendimentoBD = await Atendimentos.findAll({
-        include: [{ model: Pacientes, attributes: ["nome"] }, { model: Psicologos, attributes: ["nome"] }],
+        include: [
+          { model: Pacientes, attributes: ["nome"] },
+          { model: Psicologos, attributes: ["nome"] },
+        ],
         attributes: ["atendimentos_id", "data_atendimento", "observacao"],
         where: {
-          id
-        }
+          id,
+        },
       });
       if (atendimentoBD.length == 0) {
         return res.status(404).json(`Não existe atendimento com o id ${id}`);
       }
       res.status(200).json(atendimentoBD);
     } catch (error) {
-      res.status(500).json("Não foi possivel encontrar o atendimento, contate o suporte");
+      res
+        .status(500)
+        .json("Não foi possivel encontrar o atendimento, contate o suporte");
       console.log(error);
     }
   },

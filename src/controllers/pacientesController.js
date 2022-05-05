@@ -40,7 +40,7 @@ const PacientesController = {
           id,
         },
       });
-      
+
       if (!pacienteId) {
         return res.status(404).json("Não existe paciente com o id " + id);
       }
