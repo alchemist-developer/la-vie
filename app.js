@@ -13,5 +13,4 @@ app.use(express.json())
 app.use(routes)
 app.use (handleError)
 
-
 app.listen(3000, () => console.log('Server running on porta 3000'))
