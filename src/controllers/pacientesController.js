@@ -1,4 +1,4 @@
-const { Pacientes } = require("../model");
+const Pacientes = require("../model/Pacientes");
 
 const PacientesController = {
   async listarPacientes(req, res) {
@@ -28,6 +28,7 @@ const PacientesController = {
       const novoPaciente = await Pacientes.create({ nome, email, idade });
       return res.status(201).json(novoPaciente);
     } catch (error) {
+      console.log(error);
       res.status(400).json("Não foi possivel cadastrar o paciente");
     }
   },
@@ -39,7 +40,7 @@ const PacientesController = {
           id,
         },
       });
-      res.status(204).json("");
+      res.status(201).json("");
 
       if (!pacienteId) {
         return res.status(404).json("Não existe paciente com o id " + id);

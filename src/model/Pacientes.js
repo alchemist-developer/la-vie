@@ -8,6 +8,7 @@ const Pacientes = db.define(
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
+      field: "id"
     },
     nome: {
       type: DataTypes.STRING,
@@ -18,12 +19,12 @@ const Pacientes = db.define(
       field: "email",
     },
     idade: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATE,
       field: "idade",
     },
   },
   {
-    tableName: "paciente",
+    tableName: "pacientes",
     timestamps: false,
   }
 );
