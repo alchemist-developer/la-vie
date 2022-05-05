@@ -47,11 +47,11 @@ const PsicologosController = {
           id,
         },
       });
-      res.status(204).send("");
-
+      
       if (!psicologoId) {
         return res.status(404).json("Não existe psicologo com o id " + id);
       }
+      res.status(201).send(`O id: ${id} foi deletado com sucesso`);
     } catch (error) {
       res.status(400).json("Não foi possivel deletar o psicologo");
     }

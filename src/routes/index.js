@@ -8,7 +8,7 @@ const atendimentosValidation = require("../validators/atendimentos/atendimentosV
 const authController = require("../controllers/authController");
 const loginValidation = require("../validators/auth/authLogin");
 const auth = require("../middlewares/auth");
-const authLogin = require("../validators/auth/authLogin");
+// const authLogin = require("../validators/auth/authLogin");
 const routes = express.Router();
 
 routes.get("/psicologos", PsicologosController.listarPsicologos);

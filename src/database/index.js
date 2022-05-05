@@ -2,9 +2,9 @@ const sequelize = require("sequelize");
 const PORTDB = 3306;
 const HOSTDB = "localhost";
 /* COLOQUE A SENHA DO SEU BANCO */
-const sua_senha = "Felipe@1994";
+const sua_senha = "290595@ABc";
 
-const DB_NAME = "la-vie-atualizada";
+const DB_NAME = "la-vie";
 const DB_USER = "root";
 const DB_PASS = sua_senha;
 const DB_CONFIG = {
@@ -28,7 +28,7 @@ async function hasConection() {
         await db.authenticate();
         console.log("Banco de dados conectado!");
     } catch (error) {
-        console.error("Erro ao tentar se conectar ao banco de dados 1");
+        console.error("Erro ao tentar se conectar ao banco de dados");
     }
 }
 

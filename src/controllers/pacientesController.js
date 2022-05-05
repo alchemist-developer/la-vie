@@ -40,11 +40,11 @@ const PacientesController = {
           id,
         },
       });
-      res.status(201).json("");
-
+      
       if (!pacienteId) {
         return res.status(404).json("Não existe paciente com o id " + id);
       }
+      res.status(201).json("Paciente deletado com sucesso!");
     } catch (error) {
       res.status(400).json("Não foi possivel deletar o paciente");
     }
