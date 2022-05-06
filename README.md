@@ -10,7 +10,7 @@ diversos tipos de terapia.
 
 #### DOCUMENTAÇÃO - GRUPO 04 
 > https://la-vie.vercel.app/
-> (Adryel Simon, Bruna Vincentin, Felipe Matheus, Vinicius Alves).
+> (Adryel Simon, Bruna Vicentin, Felipe Matheus, Vinicius Alves).
 
 <br/>
 Para ajudar nos atendimentos, eles precisam de uma API que permita criar registros de
