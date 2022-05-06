@@ -7,6 +7,12 @@ Um grupo de psicólogos se juntaram e criaram a
 clínica La Vie - Saúde Mental que oferece
 diversos tipos de terapia.
 ```
+
+#### DOCUMENTAÇÃO - GRUPO 04 
+> https://la-vie.vercel.app/
+> (Adryel Simon, Bruna Vincentin, Felipe Matheus, Vinicius Alves).
+
+<br/>
 Para ajudar nos atendimentos, eles precisam de uma API que permita criar registros de
 psicólogos, pacientes e prontuários. Em uma conversa com os Front-end e os PO foram
 decididos alguns grupos de endpoints que devem ser criados.
