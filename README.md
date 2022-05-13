@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/88943961/168207573-366aea90-464f-4e78-a31f-cf88051f925c.png" />
+</p>
+<br/>
+
 ## HANDS ON WEEK 3
 
 Chegou o momento de colocar em prática tudo que aprendeu sobre Back-end, bora?
@@ -8,11 +13,11 @@ clínica La Vie - Saúde Mental que oferece
 diversos tipos de terapia.
 ```
 
-#### DOCUMENTAÇÃO - GRUPO 04 
-> https://la-vie.vercel.app/
+### FINALIZADO: DOCUMENTAÇÃO (GRUPO 04)
+> https://la-vie.vercel.app/ <br/>
 > (Adryel Simon, Bruna Vicentin, Caroline Lima, Felipe Matheus, Vinicius Alves).
 
-<br/>
+<br/><br/><br/><br/>
 Para ajudar nos atendimentos, eles precisam de uma API que permita criar registros de
 psicólogos, pacientes e prontuários. Em uma conversa com os Front-end e os PO foram
 decididos alguns grupos de endpoints que devem ser criados.
